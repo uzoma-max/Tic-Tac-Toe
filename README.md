@@ -2,7 +2,7 @@
 
 A classic Tic-Tac-Toe game that runs in the browser, built with plain HTML, CSS and JavaScript.
 
-**Play it live:** https://uzoma-max.github.io/tic-tac-toe/
+**Play it live:** https://uzoma-max.github.io/Tic-Tac-Toe/
 
 ![Screenshot of the game](screenshot.png)
 
@@ -19,8 +19,8 @@ A classic Tic-Tac-Toe game that runs in the browser, built with plain HTML, CSS 
 No installation needed. Download or clone the repo and open `index.html` in your browser:
 
 ```bash
-git clone https://github.com/uzoma-max/tic-tac-toe.git
-cd tic-tac-toe
+git clone https://github.com/uzoma-max/Tic-Tac-Toe.git
+cd Tic-Tac-Toe
 open index.html   # on Windows: start index.html
 ```
 
