@@ -1,0 +1,145 @@
+:root {
+  --bg: #f5f3ee;
+  --surface: #ffffff;
+  --text: #1f2328;
+  --muted: #6b6f76;
+  --x: #2563eb;
+  --o: #db2777;
+  --win: #fde68a;
+  --border: #d8d4cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181d;
+    --surface: #22252c;
+    --text: #e8e6e3;
+    --muted: #9a9ca3;
+    --x: #60a5fa;
+    --o: #f472b6;
+    --win: #4b3f12;
+    --border: #363a43;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 360px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 2rem;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.score {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.score span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.score strong {
+  font-size: 1.4rem;
+}
+
+#score-x strong { color: var(--x); }
+#score-o strong { color: var(--o); }
+
+.mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+#status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 1.5em;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: clamp(2.5rem, 14vw, 3.5rem);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.cell:hover:not(:disabled) {
+  transform: scale(1.03);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell.x { color: var(--x); }
+.cell.o { color: var(--o); }
+.cell.win { background: var(--win); }
+
+.controls {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.controls button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.controls button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
